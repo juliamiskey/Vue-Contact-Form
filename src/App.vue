@@ -7,13 +7,11 @@
 
 <script>
 import ExamComponent from "./components/ExamComponent.vue";
-import Footer from "./components/Footer.vue";
 
 export default {
     name: "app",
     components: {
         ExamComponent,
-        Footer,
     },
 };
 </script>
@@ -35,14 +33,13 @@ body {
     font-size: 1.6rem;
     line-height: 25px;
     font-weight: 400;
-    background: white;
+    background: #ececec;
 }
 
 #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    margin: 1em 2em;
 }
 </style>
