@@ -54,7 +54,28 @@
 <script>
 export default {
     name: "ExamComponent",
-};
+        data: () => ({
+            firstname: '',
+            lastname: '',
+            company: '',
+            email: '',
+            phone: '',
+            checked: 'false',
+        }),
+        methods: {
+            validateBeforeSubmit() {
+                this.$validator.validateAll().then((result) => {
+                    if (result) {
+                        // eslint-disable-next-line
+                        alert('Form Submitted!');
+                        return;
+                    }
+
+                    alert('Correct them errors!');
+                });
+            }
+        }
+    };
 
 </script>
 
@@ -182,7 +203,11 @@ export default {
     }
 
 /* MEDIA QUERIES */
-@media (min-width: 280px) {
+@media (max-width: 780px) {
+    .container {
+        padding: 1em 2em;
+    }
+
     .form {
         clear: both;
     }
@@ -209,12 +234,12 @@ export default {
         width: 100%;
     }
 
-    /* .desktop {
+    .desktop {
         display: none;
-    } */
+    }
 
     .mobile {
-        display: normal;
+        display: inline;
     }
 }
 </style>
